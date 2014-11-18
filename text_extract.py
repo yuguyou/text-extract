@@ -8,7 +8,7 @@
 	读取有引号内容文本处理处理
 """
 def extract1():
-	lists = (line.strip() for line in open("test.txt") if line.strip()) # 生成器表达式
+	lists = (line.strip() for line in open("text_extract") if line.strip()) # 生成器表达式
 	file_list = []
 
 	for line in lists:
@@ -34,7 +34,7 @@ def quote_split(line):
 
 def extract2():
 	lists = [reduce(lambda x,y:x.extend(y) or x,[[strs.split('"')[i].strip()] if i%2 else [fields.strip() \
-			for fields in strs.split('"')[i] if fields.strip()] for i in range(len(strs.split('"')))]) for strs in open("test.txt")]
+		for fields in strs.split('"')[i] if fields.strip()] for i in range(len(strs.split('"')))]) for strs in open("text_extract")]
 
 if __name__ == '__main__':
 	import doctest
