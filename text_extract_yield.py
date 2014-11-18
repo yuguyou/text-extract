@@ -2,7 +2,7 @@
 # coding:utf-8
 
 def keyword_replace():
-	f = open("test.txt")
+	f = open("text_extract_yield")
 	line = f.readline()
 	while line:
 		yield line
@@ -22,5 +22,5 @@ res = res[1:]
 print res
 
 def simple_extract():
-	lists = (line.strip() for line in open("test.txt") if line.strip())
+	lists = (line.strip() for line in open("text_extract_yield") if line.strip())
 	res = '|'.join(list(lists))
